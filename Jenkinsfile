@@ -17,8 +17,6 @@ node {
     }
 
     stage('Deploy') {
-        // remove old docker container
-        sh("docker rm ${dockerhubaccountid}/${application} -f")
         // deloy docker
         sh ("docker run -d -p 3333:3333 ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
     }
