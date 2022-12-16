@@ -17,11 +17,14 @@ node {
     }
 
     stage('Deploy') {
+        // remove old docker container
+        sh("docker rm ${dockerhubaccountid}/${application} -f")
+        // deloy docker
         sh ("docker run -d -p 3333:3333 ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
     }
 
     stage('Remove old images') {
         // remove old docker images
-        sh("docker rm ${dockerhubaccountid}/${application}:latest -f")
+        sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
    }
 }
