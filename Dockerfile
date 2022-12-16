@@ -5,4 +5,4 @@ RUN pip install flask
 RUN pip install flask_restful
 EXPOSE 3333
 ENTRYPOINT ["python"]
-CMD ["./helloworld.py"]
+CMD ["./src/helloworld.py"]
