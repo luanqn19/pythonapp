@@ -22,6 +22,6 @@ node {
 
     stage('Remove old images') {
         // remove old docker images
-        sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
+        sh("docker rm ${dockerhubaccountid}/${application}:latest -f")
    }
 }
