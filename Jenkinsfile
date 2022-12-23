@@ -1,9 +1,9 @@
 node {
     def application = "pythonapp"
     def dockerhubaccountid = "luanqn20"
-//     stage('Clone repository') {
-//         checkout scm
-//     }
+    stage('Clone repository') {
+        checkout scm
+    }
 
     stage('Pull image') {
         withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
