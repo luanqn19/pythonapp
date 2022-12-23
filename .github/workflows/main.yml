@@ -1,0 +1,6 @@
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - name: self test action
+      uses: ./
